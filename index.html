@@ -112,6 +112,82 @@
                 transform: scale(1);
             }
         }
+
+
+
+        /* Fade + Slide Animation */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Pop effect */
+        @keyframes pop {
+            0% {
+                transform: scale(0.6);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .animate-pop {
+            animation: pop 0.6s ease-out;
+        }
+
+        /* Floating Flags */
+        .flag {
+            width: 48px;
+            height: 48px;
+            border-radius: 999px;
+            border: 4px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            background: #f3f4f6;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Delays */
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        /* Floating motion */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
     </style>
 </head>
 
@@ -215,32 +291,37 @@
                     </div>
 
                     <div class="relative reveal flex justify-center items-center">
-                        <!-- Abstract Shape Graphic -->
-                        <div class="relative w-full aspect-square max-w-md">
+                        <!-- 🌟 Animated Abstract Card -->
+                        <div class="relative w-full aspect-square max-w-md group">
+
+                            <!-- Background Shape -->
                             <div
-                                class="absolute inset-0 bg-gradient-to-tr from-pink-300 to-blue-300 rounded-3xl rotate-6 shadow-sm border border-gray-100">
+                                class="absolute inset-0 bg-gradient-to-tr from-pink-200 to-blue-200 rounded-3xl rotate-6 shadow-sm border border-gray-100 transition duration-500 group-hover:rotate-3">
                             </div>
+
+                            <!-- Main Card -->
                             <div
-                                class="absolute inset-0 bg-white rounded-3xl shadow-2xl border border-gray-100 flex flex-col p-8 items-center justify-center text-center">
-                                <div class="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                                    <i data-lucide="languages" class="w-10 h-10 text-gray-800 "></i>
+                                class="absolute inset-0 bg-white rounded-3xl shadow-2xl border border-gray-100 flex flex-col p-8 items-center justify-center text-center animate-fadeInUp">
+
+                                <!-- Icon -->
+                                <div
+                                    class="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mb-6 animate-pop">
+                                    <i data-lucide="languages" class="w-10 reveal h-10 text-gray-800"></i>
                                 </div>
+
                                 <h3 class="text-2xl font-bold mb-2">Multi-Lingual Excellence</h3>
                                 <p class="text-gray-500 text-sm">English, Spanish, German, Japanese and more.</p>
+
+                                <!-- Floating Flags -->
                                 <div class="mt-8 flex -space-x-4">
-                                    <div
-                                        class="w-12 h-12 rounded-full border-4 border-white bg-blue-100 flex items-center justify-center font-bold text-2xl">
-                                        🇬🇧</div>
-                                    <div
-                                        class="w-12 h-12 rounded-full border-4 border-white bg-yellow-100 flex items-center justify-center font-bold text-2xl">
-                                        🇪🇸</div>
-                                    <div
-                                        class="w-12 h-12 rounded-full border-4 border-white bg-red-100 flex items-center justify-center font-bold text-2xl">
-                                        🇯🇵</div>
-                                    <div
-                                        class="w-12 h-12 rounded-full border-4 border-white bg-gray-100 flex items-center justify-center font-bold text-2xl">
-                                        🇩🇪</div>
+
+                                    <div class="flag">🇬🇧</div>
+                                    <div class="flag delay-1">🇪🇸</div>
+                                    <div class="flag delay-2">🇯🇵</div>
+                                    <div class="flag delay-3">🇩🇪</div>
+
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -294,7 +375,7 @@
                                 class="mt-12 bg-white text-black px-8 py-3 rounded-full font-bold w-fit flex items-center space-x-2">
                                 <span>Learn More</span>
                                 <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                        </a>
+                            </a>
                         </div>
 
                         <!-- Card 2: English -->
@@ -498,6 +579,7 @@
                             </div>
                         </div>
                     </div>
+                </div> 
             </section>
 
             <div class="py-12 px-6">
@@ -630,32 +712,113 @@
 
         </div>
 
-        <!-- Secondary Page Containers (Initially Hidden) -->
-        <div id="page-about" class="hidden page-transition px-6 py-20 max-w-7xl mx-auto">
-            <h2 class="text-5xl font-extrabold mb-12 tracking-tight">Our Mission</h2>
-            <div class="grid md:grid-cols-2 gap-12">
-                <p class="text-lg text-gray-600 leading-relaxed">
-                    Founded with a vision to democratize high-quality language education, Odella Institute has grown
-                    into a hub for aspiring global citizens. We believe that language is the ultimate key to
-                    professional and personal freedom.
+        <!-- 🔷 About Section Premium -->
+        <div id="page-about" class="hidden page-transition px-6 py-24 max-w-7xl mx-auto relative overflow-hidden">
+
+            <!-- Background Glow -->
+            <div class="absolute -top-20 -left-20 w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
+            <div class="absolute bottom-0 right-0 w-80 h-80 bg-purple-100 rounded-full blur-3xl opacity-40"></div>
+
+            <!-- Heading -->
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-4">
+                    About Odella
+                </h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">
+                    Empowering students with global language skills through modern, affordable, and career-focused
+                    learning.
                 </p>
-                <div class="bg-gray-50 p-8 rounded-3xl">
-                    <h3 class="text-2xl font-bold mb-4">The Odella Way</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-center space-x-3"><i data-lucide="target" class="w-5 h-5"></i>
-                            <span>Outcome Focused Learning</span>
-                        </li>
-                        <li class="flex items-center space-x-3"><i data-lucide="users" class="w-5 h-5"></i>
-                            <span>Empathetic Educators</span>
-                        </li>
-                        <li class="flex items-center space-x-3"><i data-lucide="globe" class="w-5 h-5"></i> <span>Global
-                                Standards</span></li>
-                    </ul>
+            </div>
+
+            <!-- Founder Section -->
+            <div class="grid md:grid-cols-2 gap-16 items-center mb-24">
+
+                <!-- Image -->
+                <div class="flex justify-center reveal">
+                    <div class="relative group">
+
+                        <img src="/img/Founder Image.png"
+                            class="relative w-72 h-72 object-cover rounded-3xl shadow-2xl transition duration-500 group-hover:scale-105"
+                            alt="Founder">
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="reveal">
+                    <h3 class="text-3xl font-bold mb-4">Meet the Founder ~ Ayush Gupta</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Odella Institute was founded with a simple yet powerful vision — to make high-quality language
+                        education
+                        accessible to everyone. With years of experience in teaching and mentoring students, our founder
+                        believes
+                        in practical learning, personal attention, and real-world outcomes.
+                    </p>
+                    <p class="text-gray-500 text-sm">
+                        “Language is not just a skill, it's a gateway to opportunities.”
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Mission + Vision -->
+            <div class="grid md:grid-cols-2 gap-10 mb-20">
+
+                <!-- Mission Card -->
+                <div
+                    class="bg-white border border-gray-100 p-8 rounded-3xl shadow-lg reveal hover:shadow-xl transition">
+                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                        <i data-lucide="target"></i> Our Mission
+                    </h3>
+                    <p class="text-gray-600">
+                        To provide affordable, high-quality language education that empowers individuals to achieve
+                        their
+                        academic, professional, and global aspirations.
+                    </p>
+                </div>
+
+                <!-- Vision Card -->
+                <div
+                    class="bg-white border border-gray-100 p-8 rounded-3xl shadow-lg reveal hover:shadow-xl transition">
+                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                        <i data-lucide="eye"></i> Our Vision
+                    </h3>
+                    <p class="text-gray-600">
+                        To become a globally recognized institute known for excellence in language training and student
+                        success.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Values Section -->
+            <div class="bg-gray-50 p-10 rounded-3xl reveal">
+                <h3 class="text-3xl font-bold mb-8 text-center">The Odella Way</h3>
+
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+
+                    <div class="p-6">
+                        <i data-lucide="users" class="mx-auto mb-4 w-8 h-8"></i>
+                        <h4 class="font-bold mb-2">Personal Attention</h4>
+                        <p class="text-sm text-gray-500">Small batches for better learning outcomes.</p>
+                    </div>
+
+                    <div class="p-6">
+                        <i data-lucide="globe" class="mx-auto mb-4 w-8 h-8"></i>
+                        <h4 class="font-bold mb-2">Global Standards</h4>
+                        <p class="text-sm text-gray-500">Industry-relevant curriculum and certifications.</p>
+                    </div>
+
+                    <div class="p-6">
+                        <i data-lucide="briefcase" class="mx-auto mb-4 w-8 h-8"></i>
+                        <h4 class="font-bold mb-2">Career Focus</h4>
+                        <p class="text-sm text-gray-500">Training aligned with real job opportunities.</p>
+                    </div>
+
                 </div>
             </div>
-            <!-- More About Sections... -->
-        </div>
 
+        </div>
+      <!-- 🔷 Course Section Premium -->
         <div id="page-courses" class="hidden page-transition px-6 py-20 max-w-7xl mx-auto">
             <h2 class="text-5xl font-extrabold mb-12 tracking-tight text-center">Comprehensive Catalog</h2>
             <div class="grid md:grid-cols-3 gap-8">
@@ -739,69 +902,130 @@
                         class="w-full bg-black text-white py-4 rounded-2xl font-bold">Inquire for Batch</a>
                 </div>
             </div>
-            <div class="py-12 px-6">
-                <div class="max-w-7xl mx-auto text-center mb-16 reveal">
-                    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-4">Proven Results</h2>
-                    <p class="text-gray-500">Our success stories defined by data and hard work.</p>
-                </div>
-                <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-                    <div class="reveal">
-                        <div class="bg-gray-50 p-8 rounded-3xl border border-gray-200">
-                            <h4 class="font-bold text-xl mb-6">IELTS Improvement</h4>
-                            <div class="space-y-6">
-                                <div>
-                                    <div class="flex justify-between text-sm mb-2">
-                                        <span>Initial Assessment (Avg)</span>
-                                        <span class="font-bold">5.5 Band</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
-                                        <div class="bg-gray-400 h-full" style="width: 55%"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-sm mb-2">
-                                        <span>After 3 Months at Odella</span>
-                                        <span class="font-bold text-green-600">8.0 Band</span>
-                                    </div>
-                                    <div class="w-full bg-green-100 h-2 rounded-full overflow-hidden">
-                                        <div class="bg-green-600 h-full" style="width: 85%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reveal">
-                        <div
-                            class="aspect-video bg-gray-900 rounded-3xl flex items-center justify-center text-white p-12 text-center">
-                            <div>
-                                <i data-lucide="award" class="w-16 h-16 mx-auto mb-6 opacity-50"></i>
-                                <h3 class="text-2xl font-bold mb-4">Certified Training Institute</h3>
-                                <p class="text-gray-400 text-sm">We provide official certificates of completion
-                                    recognized by international employers.</p>
-                                <button onclick="navigateTo('results')" class="mt-8 text-white underline font-bold">View
-                                    Achievement Gallery</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="py-12 px-6">
-                <div class="max-w-7xl mx-auto text-center mb-16 reveal">
-                    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-4">Sample Certificate</h2>
 
-                </div>
-                <div class="max-w-5xl mx-auto flex justify-center items-center">
-
-                    <div class="reveal flex justify-center">
-                        <img class="w-74 sm:w-100 md:w-120 lg:w-[800px] h-auto object-contain rounded-xl shadow-2xl hover:scale-105 transition duration-500"
-                            src="img/Sample Certificate.png" alt="certificate" />
-                    </div>
-
-                </div>
-            </div>
         </div>
-
+      <!-- 🔷 Result Section Premium -->
         <div id="page-results" class="hidden page-transition px-6 py-20 max-w-7xl mx-auto">
+            <div class="max-w-7xl mx-auto text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-4">Proven Results</h2>
+                <p class="text-gray-500">Our success stories defined by data and hard work.</p>
+            </div>
+            <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-6 items-center">
+                <div class="reveal">
+                    <div class="bg-gray-50 p-8 rounded-3xl border border-gray-200">
+                        <h4 class="font-bold text-xl mb-6">IELTS Improvement</h4>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span>Initial Assessment (Avg)</span>
+                                    <span class="font-bold">5.5 Band</span>
+                                </div>
+                                <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-gray-400 h-full" style="width: 55%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span>After 3 Months at Odella</span>
+                                    <span class="font-bold text-green-600">8.0 Band</span>
+                                </div>
+                                <div class="w-full bg-green-100 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-green-600 h-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 🎥 Luxury Glass Video Card -->
+                <div class="reveal">
+                    <div class="mt-20 flex justify-center px-4 font-sans">
+                        <div class="group relative w-full max-w-sm">
+
+                            <div
+                                class="absolute -inset-4 bg-gradient-to-tr from-stone-200/40 via-white/0 to-stone-100/40 rounded-[48px] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
+                            </div>
+
+                            <div
+                                class="relative overflow-hidden bg-white/40 backdrop-blur-3xl border border-white/60 rounded-[40px] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.08)] transition-all duration-700 ease-out hover:shadow-[0_48px_80px_-20px_rgba(0,0,0,0.12)] hover:-translate-y-2">
+
+                                <div
+                                    class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-80">
+                                </div>
+
+                                <div class="p-8">
+                                    <div class="flex items-center justify-between mb-8">
+                                        <div class="space-y-1">
+                                            <span
+                                                class="text-[10px] uppercase tracking-[0.2em] text-stone-400 font-medium">Odella
+                                                Institute</span>
+                                            <h3 class="text-2xl font-light tracking-tight text-stone-800">
+                                                Real <span class="font-serif italic text-stone-500">Classroom</span>
+                                            </h3>
+                                        </div>
+                                        <div
+                                            class="flex items-center gap-2 px-3 py-1 bg-white/50 rounded-full border border-white/20 shadow-sm">
+                                            <span class="relative flex h-1.5 w-1.5">
+                                                <span
+                                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-stone-400 opacity-75"></span>
+                                                <span
+                                                    class="relative inline-flex rounded-full h-1.5 w-1.5 bg-stone-500"></span>
+                                            </span>
+                                            <span
+                                                class="text-[9px] font-bold uppercase tracking-widest text-stone-500">HD
+                                                4K</span>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="relative aspect-[9/16] w-full rounded-[28px] overflow-hidden bg-stone-100 ring-1 ring-black/5 shadow-inner">
+
+                                        <div
+                                            class="absolute inset-4 border border-white/20 rounded-[20px] pointer-events-none z-10">
+                                        </div>
+
+                                        <video
+                                            class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-1000 ease-in-out scale-100 group-hover:scale-110"
+                                            autoplay muted loop playsinline>
+                                            <source src="img/WhatsApp Video 2026-05-04 at 13.50.41.mp4"
+                                                type="video/mp4">
+                                        </video>
+
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-stone-900/40 via-transparent to-transparent opacity-60 group-hover:opacity-20 transition-opacity duration-700">
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="mt-6 flex items-center justify-between opacity-50 group-hover:opacity-100 transition-opacity duration-500">
+                                        <p class="text-[11px] font-light text-stone-600 italic">Experience the
+                                            atmosphere</p>
+                                        <svg class="w-4 h-4 text-stone-400" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="reveal">
+                    <div
+                        class="aspect-video bg-gray-900 rounded-3xl flex items-center justify-center text-white p-12 text-center">
+                        <div>
+                            <i data-lucide="award" class="w-16 h-16 mx-auto mb-6 opacity-50"></i>
+                            <h3 class="text-2xl font-bold mb-4">Certified Training Institute</h3>
+                            <p class="text-gray-400 text-sm">We provide official certificates of completion
+                                recognized by international employers.</p>
+                            <button onclick="navigateTo('results')" class="mt-8 text-white underline font-bold">View
+                                Achievement Gallery</button>
+                        </div>
+                    </div>
+                </div>
+            </div> 
             <h2 class="text-5xl font-extrabold mb-12 tracking-tight">Wall of Success</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="aspect-square bg-gray-100 rounded-3xl overflow-hidden group">
@@ -847,7 +1071,20 @@
                         alt="Result">
                 </div>
             </div>
+            <div class="py-12 px-6">
+                <div class="max-w-7xl mx-auto text-center mb-16 reveal">
+                    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-4">Sample Certificate</h2>
 
+                </div>
+                <div class="max-w-5xl mx-auto flex justify-center items-center">
+
+                    <div class="reveal flex justify-center">
+                        <img class="w-74 sm:w-100 md:w-120 lg:w-[800px] h-auto object-contain rounded-xl shadow-2xl hover:scale-105 transition duration-500"
+                            src="img/Sample Certificate.png" alt="certificate" />
+                    </div>
+
+                </div>
+            </div>
         </div>
 
         <div id="page-contact" class="hidden page-transition px-6 py-20 max-w-7xl mx-auto">
