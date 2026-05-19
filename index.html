@@ -10,7 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -640,6 +642,32 @@
             }
 
         }
+
+
+
+        .social-icon-box {
+            width: 46px;
+            height: 46px;
+            border-radius: 999px;
+            border: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            color: #111827;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+        }
+
+        .social-icon-box:hover {
+            background: black;
+            color: white;
+            transform: translateY(-4px);
+        }
+
+        .social-icon-box i {
+            font-size: 18px;
+        }
     </style>
 </head>
 
@@ -676,7 +704,7 @@
                     class="hover:text-gray-500 transition-colors">Contact</a>
                 <a href="https://wa.me/918368626567"
                     class="bg-black text-white px-6 py-2.5 rounded-full hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl active:scale-95">
-                    Enquire Now
+                    Enroll Now
                 </a>
             </div>
 
@@ -1565,91 +1593,230 @@
 
 
         <!-- 🔷 Course Section Premium -->
+        <!-- 🔷 Premium Courses Section -->
         <div id="page-courses" class="hidden page-transition px-6 py-20 max-w-7xl mx-auto">
-            <h2 class="text-5xl font-extrabold mb-12 tracking-tight text-center">Comprehensive Catalog</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Detailed Course Item -->
-                <div class="group bg-white border border-gray-100 p-8 rounded-[2rem] hover:shadow-2xl transition-all">
-                    <div class="text-4xl mb-6">🇯🇵</div>
-                    <h3 class="text-2xl font-bold mb-4">Japanese N5-N1</h3>
-                    <p class="text-gray-500 mb-8">Comprehensive Kanji, grammar, and speaking training with Japanese
-                        native speakers.</p>
-                    <ul class="text-sm space-y-2 mb-8">
-                        <li class="flex items-center space-x-2"><i data-lucide="clock" class="w-4 h-4"></i> <span>6
-                                Months Duration</span></li>
-                        <li class="flex items-center space-x-2"><i data-lucide="book-open" class="w-4 h-4"></i>
-                            <span>Minato Textbook Series</span>
+
+            <!-- Heading -->
+            <div class="text-center mb-16">
+
+                <h2 class="text-5xl font-extrabold tracking-tight mb-4">
+                    Comprehensive Catalog
+                </h2>
+
+                <p class="text-gray-500 text-lg">
+                    Choose your language journey and unlock global opportunities.
+                </p>
+
+            </div>
+
+            <!-- Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Spanish -->
+                <div
+                    class="group bg-black text-white p-8 rounded-[2rem] hover:shadow-2xl transition-all duration-500 relative overflow-hidden">
+
+                    <div class="absolute top-0 right-0 text-8xl opacity-10 p-6">
+                        🇪🇸
+                    </div>
+
+                    <span
+                        class="inline-block px-4 py-1 rounded-full border border-white/20 text-xs uppercase tracking-widest mb-6">
+
+                        Most Popular
+                    </span>
+
+                    <div class="text-5xl mb-6">
+                        🇪🇸
+                    </div>
+
+                    <h3 class="text-3xl font-bold mb-4">
+                        Spanish A1-C2
+                    </h3>
+
+                    <p class="text-gray-300 mb-8 leading-relaxed">
+                        Learn one of the most spoken languages worldwide for
+                        study abroad, jobs, travel, and global communication.
+                    </p>
+
+                    <ul class="space-y-3 text-sm mb-10">
+
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="clock" class="w-4 h-4"></i>
+                            <span>4-6 Months Duration</span>
                         </li>
+
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="globe" class="w-4 h-4"></i>
+                            <span>DELE Exam Preparation</span>
+                        </li>
+
                     </ul>
-                    <a onclick="navigateTo('courses')"
-                        class="w-full bg-black text-white px-4   py-4 rounded-2xl font-bold">Inquire for Batch</a>
+
+                    <a href="YOUR_GOOGLE_FORM_LINK" target="_blank"
+                        class="block text-center bg-white text-black py-4 rounded-2xl font-bold hover:scale-[1.02] transition-all">
+
+                        Enroll Now
+                    </a>
+
                 </div>
-                <!-- Repeat for other courses -->
-                <div class="group bg-white border border-gray-100 p-8 rounded-[2rem] hover:shadow-2xl transition-all">
-                    <div class="text-4xl mb-6">🇬🇧</div>
-                    <h3 class="text-2xl font-bold mb-4">IELTS Mastery</h3>
-                    <p class="text-gray-500 mb-8">Strategic preparation for all 4 modules. Intensive feedback on writing
-                        and speaking.</p>
-                    <ul class="text-sm space-y-2 mb-8">
-                        <li class="flex items-center space-x-2"><i data-lucide="clock" class="w-4 h-4"></i> <span>2
-                                Months Duration</span></li>
-                        <li class="flex items-center space-x-2"><i data-lucide="award" class="w-4 h-4"></i>
+
+                <!-- German -->
+                <div
+                    class="group bg-white border border-gray-100 p-8 rounded-[2rem] hover:shadow-2xl transition-all duration-500">
+
+                    <div class="text-5xl mb-6">
+                        🇩🇪
+                    </div>
+
+                    <h3 class="text-3xl font-bold mb-4">
+                        German A1-C1
+                    </h3>
+
+                    <p class="text-gray-500 mb-8 leading-relaxed">
+                        Intensive Goethe preparation with grammar,
+                        speaking and career-focused German training.
+                    </p>
+
+                    <ul class="space-y-3 text-sm mb-10">
+
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="clock" class="w-4 h-4"></i>
+                            <span>4 Months Duration</span>
+                        </li>
+
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="award" class="w-4 h-4"></i>
+                            <span>Goethe Certification Training</span>
+                        </li>
+
+                    </ul>
+
+                    <a href="YOUR_GOOGLE_FORM_LINK" target="_blank"
+                        class="block text-center bg-black text-white py-4 rounded-2xl font-bold hover:bg-gray-900 transition-all">
+
+                        Enroll Now
+                    </a>
+
+                </div>
+
+                <!-- Japanese -->
+                <div
+                    class="group bg-white border border-gray-100 p-8 rounded-[2rem] hover:shadow-2xl transition-all duration-500">
+
+                    <div class="text-5xl mb-6">
+                        🇯🇵
+                    </div>
+
+                    <h3 class="text-3xl font-bold mb-4">
+                        Japanese N5-N1
+                    </h3>
+
+                    <p class="text-gray-500 mb-8 leading-relaxed">
+                        Learn Japanese with JLPT-focused modules,
+                        Kanji mastery and speaking practice.
+                    </p>
+
+                    <ul class="space-y-3 text-sm mb-10">
+
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="clock" class="w-4 h-4"></i>
+                            <span>6 Months Duration</span>
+                        </li>
+
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="book-open" class="w-4 h-4"></i>
+                            <span>JLPT Preparation</span>
+                        </li>
+
+                    </ul>
+
+                    <a href="YOUR_GOOGLE_FORM_LINK" target="_blank"
+                        class="block text-center bg-black text-white py-4 rounded-2xl font-bold hover:bg-gray-900 transition-all">
+
+                        Enroll Now
+                    </a>
+
+                </div>
+
+                <!-- IELTS -->
+                <div
+                    class="group bg-white border border-gray-100 p-8 rounded-[2rem] hover:shadow-2xl transition-all duration-500">
+
+                    <div class="text-5xl mb-6">
+                        🇬🇧
+                    </div>
+
+                    <h3 class="text-3xl font-bold mb-4">
+                        IELTS Mastery
+                    </h3>
+
+                    <p class="text-gray-500 mb-8 leading-relaxed">
+                        Complete preparation for Listening, Reading,
+                        Writing and Speaking with mock tests.
+                    </p>
+
+                    <ul class="space-y-3 text-sm mb-10">
+
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="clock" class="w-4 h-4"></i>
+                            <span>2 Months Duration</span>
+                        </li>
+
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="file-text" class="w-4 h-4"></i>
                             <span>Official Mock Exams</span>
                         </li>
+
                     </ul>
-                    <a onclick="navigateTo('courses')"
-                        class="button w-full bg-black px-4   text-white py-4 rounded-2xl font-bold">Inquire for
-                        Batch</a>
+
+                    <a href="YOUR_GOOGLE_FORM_LINK" target="_blank"
+                        class="block text-center bg-black text-white py-4 rounded-2xl font-bold hover:bg-gray-900 transition-all">
+
+                        Enroll Now
+                    </a>
+
                 </div>
-                <!-- Repeat for other courses -->
-                <div class="group bg-white border border-gray-100 p-8 rounded-[2rem] hover:shadow-2xl transition-all">
-                    <div class="text-4xl mb-6">🇬🇧</div>
-                    <h3 class="text-2xl font-bold mb-4">IELTS Mastery</h3>
-                    <p class="text-gray-500 mb-8">Strategic preparation for all 4 modules. Intensive feedback on writing
-                        and speaking.</p>
-                    <ul class="text-sm space-y-2 mb-8">
-                        <li class="flex items-center space-x-2"><i data-lucide="clock" class="w-4 h-4"></i> <span>2
-                                Months Duration</span></li>
-                        <li class="flex items-center space-x-2"><i data-lucide="award" class="w-4 h-4"></i>
-                            <span>Official Mock Exams</span>
+
+                <!-- French -->
+                <div
+                    class="group bg-white border border-gray-100 p-8 rounded-[2rem] hover:shadow-2xl transition-all duration-500">
+
+                    <div class="text-5xl mb-6">
+                        🇫🇷
+                    </div>
+
+                    <h3 class="text-3xl font-bold mb-4">
+                        French A1-B2
+                    </h3>
+
+                    <p class="text-gray-500 mb-8 leading-relaxed">
+                        Master French communication with DELF preparation
+                        and interactive speaking sessions.
+                    </p>
+
+                    <ul class="space-y-3 text-sm mb-10">
+
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="clock" class="w-4 h-4"></i>
+                            <span>3-5 Months Duration</span>
                         </li>
-                    </ul>
-                    <a onclick="navigateTo('courses')"
-                        class="button w-full bg-black px-4   text-white py-4 rounded-2xl font-bold">Inquire for
-                        Batch</a>
-                </div>
-                <!-- Repeat for other courses -->
-                <div class="group bg-white border border-gray-100 p-8 rounded-[2rem] hover:shadow-2xl transition-all">
-                    <div class="text-4xl mb-6">🇬🇧</div>
-                    <h3 class="text-2xl font-bold mb-4">IELTS Mastery</h3>
-                    <p class="text-gray-500 mb-8">Strategic preparation for all 4 modules. Intensive feedback on writing
-                        and speaking.</p>
-                    <ul class="text-sm space-y-2 mb-8">
-                        <li class="flex items-center space-x-2"><i data-lucide="clock" class="w-4 h-4"></i> <span>2
-                                Months Duration</span></li>
-                        <li class="flex items-center space-x-2"><i data-lucide="award" class="w-4 h-4"></i>
-                            <span>Official Mock Exams</span>
+
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="languages" class="w-4 h-4"></i>
+                            <span>DELF Exam Training</span>
                         </li>
+
                     </ul>
-                    <a onclick="navigateTo('courses')"
-                        class="button w-full bg-black px-4   text-white py-4 rounded-2xl font-bold">Inquire for
-                        Batch</a>
+
+                    <a href="YOUR_GOOGLE_FORM_LINK" target="_blank"
+                        class="block text-center bg-black text-white py-4 rounded-2xl font-bold hover:bg-gray-900 transition-all">
+
+                        Enroll Now
+                    </a>
+
                 </div>
-                <div class="group bg-white border border-gray-100 p-8 rounded-[2rem] hover:shadow-2xl transition-all">
-                    <div class="text-4xl mb-6">🇩🇪</div>
-                    <h3 class="text-2xl font-bold mb-4">German A1-C1</h3>
-                    <p class="text-gray-500 mb-8">Get ready for Goethe-Zertifikat with our intensive German language
-                        tracks.</p>
-                    <ul class="text-sm space-y-2 mb-8">
-                        <li class="flex items-center space-x-2"><i data-lucide="clock" class="w-4 h-4"></i> <span>4
-                                Months Duration</span></li>
-                        <li class="flex items-center space-x-2"><i data-lucide="user-check" class="w-4 h-4"></i>
-                            <span>Certified Trainers</span>
-                        </li>
-                    </ul>
-                    <a onclick="navigateTo('courses')"
-                        class="w-full bg-black text-white px-4     py-4 rounded-2xl font-bold">Inquire for Batch</a>
-                </div>
+
             </div>
 
         </div>
@@ -1937,19 +2104,44 @@
                         <img src="img/odella full logo-01 (1).png  " class="mx-auto mt-0" width="340" height="100">
                     </div>
 
-                    <div class="flex space-x-4 ">
-                        <a href="#"
-                            class="w-10 h-10  rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all"><i
-                                data-lucide="instagram" class="w-4 h-4"></i></a>
-                        <a href="#"
-                            class="w-10 h-10  rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all"><i
-                                data-lucide="facebook" class="w-4 h-4"></i></a>
-                        <a href="#"
-                            class="w-10 h-10   rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all"><i
-                                data-lucide="twitter" class="w-4 h-4"></i></a>
-                        <a href="#"
-                            class="w-10 h-10   rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all"><i
-                                data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    <!-- Social Media Icons -->
+
+                    <div class="flex items-center gap-4">
+
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/odellainstitute?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            target="_blank" class="social-icon-box">
+
+                            <i class="fa-brands fa-instagram"></i>
+
+                        </a>
+
+                        <!-- Facebook -->
+                        <a href="https://facebook.com/" target="_blank" class="social-icon-box">
+
+                            <i class="fa-brands fa-facebook-f"></i>
+
+                        </a>
+                        <!-- Google -->
+                        <a href="https://share.google/OHwKdjWphMv7RK5W1" target="_blank" class="social-icon-box">
+
+                            <i class="fa-brands fa-google"></i>
+
+                        </a>
+                        <!-- X / Twitter -->
+                        <a href="https://x.com/" target="_blank" class="social-icon-box">
+
+                            <i class="fa-brands fa-x-twitter"></i>
+
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://linkedin.com/" target="_blank" class="social-icon-box">
+
+                            <i class="fa-brands fa-linkedin-in"></i>
+
+                        </a>
+
                     </div>
                 </div>
                 <div class="  mt-5">
@@ -1990,6 +2182,12 @@
         class="whatsapp-btn bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform active:scale-90">
         <i data-lucide="message-circle" class="w-8 h-8"></i>
     </a>
+
+    <script>
+        window.onload = () => {
+            lucide.createIcons();
+        };
+    </script>
 
     <script>
         // Initialize Lucide Icons
